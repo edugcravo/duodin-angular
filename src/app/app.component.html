@@ -1,0 +1,16 @@
+<app-side-bar
+[currentPage]="currentPage"
+[isMobileOpen]="isMobileSidebarOpen"
+[coupleNames]="coupleNames"
+(pageChange)="currentPage = $event"
+(closeMobile)="isMobileSidebarOpen = false"
+(logout)="onLogout()">
+></app-side-bar>
+
+<div class="flex-1 flex flex-col md:ml-[305px] conteudo">
+  <!-- <app-header (toggleMobile)="mobileOpen = !mobileOpen"></app-header> -->
+  <div class="p-6 sm:p-10 flex-1 overflow-auto bloco-conteudo">
+    <router-outlet class="router"></router-outlet>
+  </div>
+  <!-- <app-footer *ngIf="isLoggedIn"></app-footer> -->
+</div>
